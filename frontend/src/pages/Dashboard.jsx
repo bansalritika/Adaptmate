@@ -11,29 +11,31 @@ import SmartInsights from "../components/SmartInsights";
 const Dashboard = () => {
   return (
     <div className="p-4 bg-[#f9fafb] min-h-screen">
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-        {/* LEFT 2/3 of screen */}
-        <div className="lg:col-span-2 space-y-4">
+      {/* Grid layout for main + sidebar */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
+        
+        {/* LEFT (Main Content) */}
+        <div className="lg:col-span-2 space-y-5">
           <TopBanner />
 
-          {/* Nested grid for Performance + Suggestions + Teacher Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {/* PerformanceChart + ImmediateAction (2/3 width on md+) */}
-            <div className="md:col-span-2 space-y-4">
+          {/* Performance + Suggestions + Teacher Stats */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {/* PerformanceChart + ImmediateAction (2/3 width) */}
+            <div className="md:col-span-2 space-y-5">
               <PerformanceChart />
               <ImmediateAction />
             </div>
 
-            {/* Suggestions + Stats (1/3 width on md+) */}
-            <div className="space-y-4">
+            {/* Suggestions + Teacher Stats (1/3 width) */}
+            <div className="space-y-5">
               <Suggestions />
               <TeacherStats />
             </div>
           </div>
         </div>
 
-        {/* RIGHT sidebar column */}
-        <div className="space-y-4">
+        {/* RIGHT Sidebar */}
+        <div className="space-y-5">
           <NeedsAssistance />
           <SmartInsights />
         </div>
